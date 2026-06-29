@@ -829,33 +829,42 @@ body.mobile-portrait-rotate {
   top: 0;
   left: 0;
 }
-body.mobile-portrait-rotate .geometry-app {
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  transform: none;
+}
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .geometry-app {
   width: var(--visible-height);
   height: var(--visible-width);
 }
-body.mobile-portrait-rotate .geometry-screen {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .geometry-screen {
   padding: 5px 8px;
 }
-body.mobile-portrait-rotate .screen-heading p {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .screen-heading p {
   font-size: clamp(10px, 2vh, 14px);
 }
-body.mobile-portrait-rotate .shape-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .shape-title {
   font-size: clamp(22px, 5.2vh, 38px);
 }
-body.mobile-portrait-rotate .grid-layout {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .grid-layout {
   grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1.58fr);
   gap: 8px;
   margin-top: 0;
 }
-body.mobile-portrait-rotate .lion-mascot {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .lion-mascot {
   width: clamp(145px, 19vw, 215px);
   max-height: 52vh;
 }
-body.mobile-portrait-rotate .small-lion {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .small-lion {
   width: clamp(128px, 16vw, 190px);
   max-height: 46vh;
 }
-body.mobile-portrait-rotate .speech-bubble {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .speech-bubble {
   min-width: 105px;
   min-height: 68px;
   max-width: 158px;
@@ -864,20 +873,20 @@ body.mobile-portrait-rotate .speech-bubble {
   border-radius: 42px;
   font-size: clamp(9px, 1.8vh, 13px) !important;
 }
-body.mobile-portrait-rotate .speech-bubble::after {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .speech-bubble::after {
   width: 17px;
   height: 17px;
   bottom: -10px;
   border-left-width: 2px;
   border-bottom-width: 2px;
 }
-body.mobile-portrait-rotate .shape-card img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .shape-card img {
   height: clamp(40px, 14vh, 100px);
 }
-body.mobile-portrait-rotate .shape-card span {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .shape-card span {
   font-size: clamp(10px, 2.2vh, 18px);
 }
-body.mobile-portrait-rotate .round-action {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .round-action {
   width: clamp(30px, 5vh, 40px);
   height: clamp(30px, 5vh, 40px);
   font-size: clamp(13px, 3.2vh, 18px);
@@ -885,12 +894,12 @@ body.mobile-portrait-rotate .round-action {
     0 3px 0 #084995,
     0 6px 10px rgba(24, 87, 154, 0.16);
 }
-body.mobile-portrait-rotate .primary-button {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .primary-button {
   min-height: clamp(34px, 6.2vh, 48px);
   padding: 6px 14px;
   font-size: clamp(12px, 2.6vh, 18px);
 }
-body.mobile-portrait-rotate .detail-shell {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-shell {
   grid-template-columns: minmax(145px, 0.4fr) minmax(0, 1.14fr) minmax(
       180px,
       0.74fr
@@ -898,26 +907,26 @@ body.mobile-portrait-rotate .detail-shell {
   gap: 6px;
   margin-top: 2px;
 }
-body.mobile-portrait-rotate .detail-infographic {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-infographic {
   max-height: min(42vh, 200px);
 }
-body.mobile-portrait-rotate .compact-controls {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .compact-controls {
   gap: 6px;
   margin-top: -8px;
   transform: translateY(-8px);
 }
-body.mobile-portrait-rotate .objects-panel-head {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .objects-panel-head {
   padding-bottom: 5px;
   gap: 6px;
 }
-body.mobile-portrait-rotate .objects-shape-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .objects-shape-image {
   width: clamp(42px, 8vh, 60px);
   height: clamp(42px, 8vh, 60px);
 }
-body.mobile-portrait-rotate .objects-head-copy h3 {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .objects-head-copy h3 {
   font-size: clamp(16px, 3vh, 22px);
 }
-body.mobile-portrait-rotate .objects-head-copy p {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .objects-head-copy p {
   font-size: clamp(11px, 2vh, 14px);
 }
 
@@ -930,18 +939,18 @@ body.mobile-portrait-rotate .objects-head-copy p {
   }
 }
 
-body.mobile-portrait-rotate #objectsTitle {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #objectsTitle {
   font-size: 16px;
 }
 
-body.mobile-portrait-rotate #objectsSubtitle {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #objectsSubtitle {
   font-size: 10px;
 }
 
-body.mobile-portrait-rotate .object-cards.side-stack {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-cards.side-stack {
   gap: 6px;
 }
-body.mobile-portrait-rotate .object-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-card {
   flex-direction: row;
   justify-content: center;
   gap: 7px;
@@ -952,7 +961,7 @@ body.mobile-portrait-rotate .object-card {
     0 4px 0 rgba(68, 131, 74, 0.22),
     0 8px 14px rgba(32, 94, 119, 0.1);
 }
-body.mobile-portrait-rotate .object-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-name {
   width: auto;
   flex: 0 1 auto;
   min-width: 0;
@@ -960,14 +969,14 @@ body.mobile-portrait-rotate .object-name {
   line-height: 1;
   text-align: left;
 }
-body.mobile-portrait-rotate .object-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-image {
   width: 75px;
   --object-image-scale: 1;
 }
 
 @media (max-width: 600px) {
   .object-image,
-  body.mobile-portrait-rotate .object-image {
+  body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-image {
     width: 30px;
   }
 }

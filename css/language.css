@@ -1175,27 +1175,120 @@ body.mobile-portrait-rotate .continue-btn {
 }
 
 @media (min-width: 901px) and (min-height: 650px) {
-  body:not(.mobile-portrait-rotate) .title-banner {
+  body:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .title-banner {
     top: 95px !important;
   }
 
-  body:not(.mobile-portrait-rotate) .continue-btn {
+  body:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .continue-btn {
     bottom: 95px !important;
   }
 
-  body:not(.mobile-portrait-rotate) .cards-wrapper {
+  body:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .cards-wrapper {
     margin-top: 120px !important;
   }
 }
 
-body.language-page:not(.mobile-portrait-rotate) .title-banner {
+body.language-page:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .title-banner {
   top: 110px !important;
 }
 
-body.language-page:not(.mobile-portrait-rotate) .continue-btn {
+body.language-page:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .continue-btn {
   bottom: 20px !important;
 }
 
-body.language-page:not(.mobile-portrait-rotate) .cards-wrapper {
+body.language-page:not(.mobile-portrait-rotate):not(.mobile-landscape-layout) .cards-wrapper {
   margin-top: 135px !important;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: url("../assets/images/language-images/language_backgound.png") center / cover no-repeat;
+  transform: none;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .language-screen {
+  position: relative;
+  width: var(--visible-height);
+  height: var(--visible-width);
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 8vw, 42px) clamp(48px, 12vh, 72px) clamp(38px, 10vw, 52px);
+  overflow: hidden;
+  transform: none;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .title-banner {
+  top: 4px;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .title-image {
+  width: clamp(95px, 24vw, 160px);
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .cards-wrapper {
+  width: min(calc(100dvh - 132px), 580px);
+  max-width: calc(100% - 118px);
+  gap: clamp(7px, 1.8vh, 13px);
+  margin-top: clamp(6px, 2.5vw, 12px);
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .language-card {
+  height: clamp(118px, 48vw, 190px);
+  padding: 6px 5px;
+  border-width: 4px;
+  border-radius: 17px;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .flag {
+  width: clamp(30px, 11vw, 48px);
+  height: clamp(30px, 11vw, 48px);
+  margin-bottom: 3px;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .card-animal {
+  width: clamp(38px, 15vw, 66px);
+  height: clamp(38px, 15vw, 66px);
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .language-name {
+  margin-top: 3px;
+  padding: 2px 6px;
+  font-size: clamp(10px, 3.3vw, 15px);
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .arrow {
+  top: 52%;
+  bottom: auto;
+  width: clamp(32px, 9vw, 40px);
+  height: clamp(32px, 9vw, 40px);
+  font-size: clamp(22px, 6vw, 28px);
+  transform: translateY(-50%);
+  z-index: 10000;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .arrow-left {
+  left: 12px;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .arrow-right {
+  right: 12px;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .continue-btn {
+  bottom: 6px;
+  min-width: min(160px, calc(100dvh - 140px));
+  padding: 5px 14px;
+  font-size: clamp(13px, 3.6vw, 16px);
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .lion-box,
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .selected-animal-box {
+  display: none;
 }

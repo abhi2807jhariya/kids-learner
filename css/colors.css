@@ -3341,13 +3341,22 @@ body.mobile-portrait-rotate {
   transform-origin: center center;
 }
 
-body.mobile-portrait-rotate .colors-app {
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  transform: none;
+}
+
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .colors-app {
   width: var(--visible-height);
   height: var(--visible-width);
   overflow: hidden;
 }
 
-body.mobile-portrait-rotate .colors-hero {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .colors-hero {
   display: block;
   min-height: 0;
   height: 100%;
@@ -3359,24 +3368,24 @@ body.mobile-portrait-rotate .colors-hero {
   touch-action: none;
 }
 
-body.mobile-portrait-rotate .page-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .page-title {
   margin-bottom: 0;
   font-size: clamp(24px, 7vh, 38px);
 }
 
-body.mobile-portrait-rotate .page-subtitle {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .page-subtitle {
   margin-bottom: 8px;
   font-size: clamp(10px, 2.8vh, 16px);
 }
 
-body.mobile-portrait-rotate .colors-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .colors-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(6px, 1.5vh, 12px);
   width: min(100%, 1120px);
   max-width: 100%;
 }
 
-body.mobile-portrait-rotate .color-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-card {
   min-height: clamp(88px, 25vh, 122px);
   padding: 6px 5px 28px;
   border-width: 3px;
@@ -3387,37 +3396,37 @@ body.mobile-portrait-rotate .color-card {
     inset 0 0 18px rgba(255, 255, 255, 0.86);
 }
 
-body.mobile-portrait-rotate .card-object-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .card-object-image {
   top: 5px;
   left: 5px;
   width: clamp(24px, 7vh, 36px);
   height: clamp(24px, 7vh, 36px);
 }
 
-body.mobile-portrait-rotate .paint-blob-wrap {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .paint-blob-wrap {
   width: clamp(54px, 15vh, 78px);
   height: clamp(54px, 15vh, 78px);
 }
 
-body.mobile-portrait-rotate .paint-blob {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .paint-blob {
   width: clamp(46px, 13vh, 68px);
   height: clamp(46px, 13vh, 68px);
   border-width: 3px;
 }
 
-body.mobile-portrait-rotate .paint-drop {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .paint-drop {
   width: 8px;
   height: 8px;
 }
 
-body.mobile-portrait-rotate .color-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-name {
   bottom: 15px;
   min-width: 66px;
   padding: 0 7px;
   font-size: 8px;
 }
 
-body.mobile-portrait-rotate .color-modal {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-modal {
   width: var(--visible-height);
   height: var(--visible-width);
   align-items: flex-start;
@@ -3428,7 +3437,7 @@ body.mobile-portrait-rotate .color-modal {
   touch-action: none;
 }
 
-body.mobile-portrait-rotate .color-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-detail {
   --modal-header-height: 50px;
   width: 96%;
   height: auto !important;
@@ -3443,13 +3452,13 @@ body.mobile-portrait-rotate .color-detail {
   border-radius: 22px;
 }
 
-body.mobile-portrait-rotate .modal-top-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-top-row {
   min-height: 42px;
   height: auto;
   padding-top: 0;
 }
 
-body.mobile-portrait-rotate .modal-progress {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-progress {
   position: absolute;
   top: -28px;
   left: -30px;
@@ -3458,16 +3467,16 @@ body.mobile-portrait-rotate .modal-progress {
   font-size: 10px;
 }
 
-body.mobile-portrait-rotate .modal-small-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-small-label {
   display: none;
 }
 
-body.mobile-portrait-rotate .detail-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-title {
   margin-top: 0;
   font-size: clamp(20px, 5.3vh, 30px);
 }
 
-body.mobile-portrait-rotate .modal-content-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-content-grid {
   grid-template-columns: minmax(142px, 0.55fr) minmax(360px, 1.45fr);
   gap: 7px;
   width: 100%;
@@ -3475,45 +3484,45 @@ body.mobile-portrait-rotate .modal-content-grid {
   min-height: 0 !important;
 }
 
-body.mobile-portrait-rotate .selected-color-panel,
-body.mobile-portrait-rotate .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .selected-color-panel,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .learning-panel {
   height: auto !important;
   min-height: 0 !important;
   border-width: 3px;
   border-radius: 20px;
 }
 
-body.mobile-portrait-rotate .selected-color-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .selected-color-panel {
   padding: 7px;
 }
 
-body.mobile-portrait-rotate .big-splash-wrap {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-wrap {
   width: clamp(88px, 23vh, 124px);
   height: clamp(88px, 23vh, 124px);
 }
 
-body.mobile-portrait-rotate .big-splash-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-image {
   width: clamp(84px, 22vh, 118px);
   height: clamp(84px, 22vh, 118px);
 }
 
-body.mobile-portrait-rotate .big-splash-fallback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-fallback {
   width: clamp(72px, 19vh, 100px);
   height: clamp(72px, 19vh, 100px);
   border-width: 4px;
 }
 
-body.mobile-portrait-rotate .detail-color-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-color-name {
   font-size: clamp(21px, 5vh, 30px);
 }
 
-body.mobile-portrait-rotate .say-color-message {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .say-color-message {
   margin-top: 4px;
   padding: 3px 8px;
   font-size: 10px;
 }
 
-body.mobile-portrait-rotate .sound-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .sound-btn {
   min-width: 54px;
   margin-top: 6px;
   padding: 6px 11px;
@@ -3524,7 +3533,7 @@ body.mobile-portrait-rotate .sound-btn {
     0 8px 12px rgba(0, 0, 0, 0.13);
 }
 
-body.mobile-portrait-rotate .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .learning-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
@@ -3534,8 +3543,8 @@ body.mobile-portrait-rotate .learning-panel {
   border: 0;
 }
 
-body.mobile-portrait-rotate .examples-section,
-body.mobile-portrait-rotate .quiz-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-section,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-section {
   min-height: 0 !important;
   padding: 6px;
   border-width: 2px;
@@ -3543,36 +3552,36 @@ body.mobile-portrait-rotate .quiz-section {
   overflow: hidden;
 }
 
-body.mobile-portrait-rotate .section-heading,
-body.mobile-portrait-rotate .quiz-heading {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .section-heading,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-heading {
   font-size: 15px;
 }
 
-body.mobile-portrait-rotate .quiz-label-top {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-label-top {
   margin-bottom: 2px;
   font-size: 9px;
 }
 
-body.mobile-portrait-rotate .section-instruction {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .section-instruction {
   display: none;
 }
 
-body.mobile-portrait-rotate .examples-grid,
-body.mobile-portrait-rotate .quiz-options {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-grid,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 5px;
 }
 
-body.mobile-portrait-rotate .example-card,
-body.mobile-portrait-rotate .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-card,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option {
   min-height: clamp(70px, 19vh, 96px);
   padding: 4px;
   border-width: 2px;
   border-radius: 13px;
 }
 
-body.mobile-portrait-rotate .example-card,
-body.mobile-portrait-rotate .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-card,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3580,29 +3589,29 @@ body.mobile-portrait-rotate .quiz-option {
   text-align: center;
 }
 
-body.mobile-portrait-rotate .example-image,
-body.mobile-portrait-rotate .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-image,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option-image {
   width: clamp(38px, 11vh, 58px);
   height: clamp(38px, 11vh, 58px);
 }
 
-body.mobile-portrait-rotate .example-image,
-body.mobile-portrait-rotate .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-image,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option-image {
   width: 40px;
   height: 40px;
   margin: 0 auto;
 }
 
-body.mobile-portrait-rotate .example-name,
-body.mobile-portrait-rotate .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-name,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-label {
   min-width: 0;
   margin-top: 3px;
   padding: 2px 5px;
   font-size: clamp(9px, 2.5vh, 12px);
 }
 
-body.mobile-portrait-rotate .object-feedback,
-body.mobile-portrait-rotate .quiz-feedback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-feedback,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-feedback {
   min-height: 19px;
   margin-top: 3px;
   padding: 2px 6px;
@@ -3612,7 +3621,7 @@ body.mobile-portrait-rotate .quiz-feedback {
   line-height: 1.05;
 }
 
-body.mobile-portrait-rotate .close-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .close-btn {
   top: 8px;
   right: 10px;
   width: 30px;
@@ -3624,7 +3633,7 @@ body.mobile-portrait-rotate .close-btn {
     0 8px 14px rgba(0, 0, 0, 0.2);
 }
 
-body.mobile-portrait-rotate .nav-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .nav-btn {
   top: 50%;
   bottom: auto;
   width: 32px;
@@ -3634,37 +3643,37 @@ body.mobile-portrait-rotate .nav-btn {
   transform: translateY(-50%);
 }
 
-body.mobile-portrait-rotate .modal-prev-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-prev-btn {
   left: 9px;
 }
 
-body.mobile-portrait-rotate .modal-next-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-next-btn {
   right: 9px;
 }
 
-body.mobile-portrait-rotate .success-message {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message {
   bottom: 7px;
   min-width: 0;
   padding: 5px 10px;
   border-width: 2px;
 }
 
-body.mobile-portrait-rotate .success-message strong {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message strong {
   font-size: 12px;
 }
 
-body.mobile-portrait-rotate .success-message span {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message span {
   font-size: 10px;
 }
 
 /* Reference-style horizontal mobile color modal */
-body.mobile-portrait-rotate .color-modal {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-modal {
   align-items: center;
   justify-content: center;
   padding: 2px 34px;
 }
 
-body.mobile-portrait-rotate .color-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-detail {
   display: grid;
   grid-template-rows: 54px minmax(0, 1fr);
   width: min(96%, 760px);
@@ -3674,7 +3683,7 @@ body.mobile-portrait-rotate .color-detail {
   border-radius: 18px;
 }
 
-body.mobile-portrait-rotate .modal-top-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-top-row {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -3683,7 +3692,7 @@ body.mobile-portrait-rotate .modal-top-row {
   padding: 0 10px 0 0;
 }
 
-body.mobile-portrait-rotate .modal-progress {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-progress {
   top: 11px;
   right: 8px;
   bottom: auto;
@@ -3696,11 +3705,11 @@ body.mobile-portrait-rotate .modal-progress {
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .modal-heading-area {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-heading-area {
   align-items: flex-end;
 }
 
-body.mobile-portrait-rotate .detail-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-title {
   display: none;
   margin: 0;
   font-size: 24px;
@@ -3709,7 +3718,7 @@ body.mobile-portrait-rotate .detail-title {
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .modal-content-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(154px, 0.55fr);
   grid-template-rows: minmax(0, 1fr);
@@ -3718,7 +3727,7 @@ body.mobile-portrait-rotate .modal-content-grid {
   min-height: 0 !important;
 }
 
-body.mobile-portrait-rotate .selected-color-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .selected-color-panel {
   position: absolute;
   top: 6px;
   left: 8px;
@@ -3741,7 +3750,7 @@ body.mobile-portrait-rotate .selected-color-panel {
     inset 0 0 18px rgba(255, 255, 255, 0.9);
 }
 
-body.mobile-portrait-rotate .sound-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .sound-btn {
   grid-column: 1;
   grid-row: 1;
   min-width: 30px;
@@ -3755,7 +3764,7 @@ body.mobile-portrait-rotate .sound-btn {
   font-size: 13px;
 }
 
-body.mobile-portrait-rotate .say-color-message {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .say-color-message {
   grid-column: 2;
   grid-row: 1;
   margin: 0;
@@ -3768,7 +3777,7 @@ body.mobile-portrait-rotate .say-color-message {
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .big-splash-wrap {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-wrap {
   grid-column: 3;
   grid-row: 1;
   width: 78px;
@@ -3776,17 +3785,17 @@ body.mobile-portrait-rotate .big-splash-wrap {
   margin-top: -12px;
 }
 
-body.mobile-portrait-rotate .big-splash-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-image {
   width: 76px;
   height: 76px;
 }
 
-body.mobile-portrait-rotate .big-splash-fallback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .big-splash-fallback {
   width: 64px;
   height: 64px;
 }
 
-body.mobile-portrait-rotate .detail-color-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-color-name {
   grid-column: 4;
   grid-row: 1;
   justify-self: start;
@@ -3796,7 +3805,7 @@ body.mobile-portrait-rotate .detail-color-name {
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .learning-panel {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(142px, 0.45fr);
@@ -3805,8 +3814,8 @@ body.mobile-portrait-rotate .learning-panel {
   padding-top: 2px;
 }
 
-body.mobile-portrait-rotate .examples-section,
-body.mobile-portrait-rotate .quiz-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-section,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-section {
   display: flex;
   flex-direction: column;
   min-height: 0 !important;
@@ -3814,27 +3823,27 @@ body.mobile-portrait-rotate .quiz-section {
   border-radius: 14px;
 }
 
-body.mobile-portrait-rotate .examples-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-section {
   grid-column: 1;
 }
 
-body.mobile-portrait-rotate .quiz-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-section {
   grid-column: 2;
 }
 
-body.mobile-portrait-rotate .section-heading,
-body.mobile-portrait-rotate .quiz-heading {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .section-heading,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-heading {
   margin: 0 0 4px;
   font-size: 15px;
   line-height: 1.05;
 }
 
-body.mobile-portrait-rotate .quiz-label-top {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-label-top {
   margin: 0;
   font-size: 8px;
 }
 
-body.mobile-portrait-rotate .section-instruction {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .section-instruction {
   display: block;
   order: 3;
   margin: 4px 0 0;
@@ -3842,48 +3851,48 @@ body.mobile-portrait-rotate .section-instruction {
   line-height: 1;
 }
 
-body.mobile-portrait-rotate .examples-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
   flex: 1;
   min-height: 0;
 }
 
-body.mobile-portrait-rotate .quiz-options {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 4px;
   flex: 1;
   min-height: 0;
 }
 
-body.mobile-portrait-rotate .example-card,
-body.mobile-portrait-rotate .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-card,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option {
   min-height: 0;
   height: 100%;
   padding: 3px;
   border-radius: 10px;
 }
 
-body.mobile-portrait-rotate .example-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-image {
   width: 42px;
   height: 42px;
 }
 
-body.mobile-portrait-rotate .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-option-image {
   width: 32px;
   height: 32px;
 }
 
-body.mobile-portrait-rotate .example-name,
-body.mobile-portrait-rotate .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .example-name,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-label {
   margin-top: 2px;
   padding: 1px 4px;
   font-size: 9px;
   line-height: 1.05;
 }
 
-body.mobile-portrait-rotate .object-feedback,
-body.mobile-portrait-rotate .quiz-feedback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-feedback,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-feedback {
   min-height: 16px;
   margin-top: 4px;
   padding: 2px 6px;
@@ -3894,29 +3903,29 @@ body.mobile-portrait-rotate .quiz-feedback {
   text-overflow: ellipsis;
 }
 
-body.mobile-portrait-rotate .close-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .close-btn {
   /* top: auto; */
   right: 5px;
   bottom: 5px;
 }
 
-body.mobile-portrait-rotate .modal-prev-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-prev-btn {
   left: 5px;
 }
 
-body.mobile-portrait-rotate .modal-next-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-next-btn {
   right: 5px;
 }
 
 /* Flex wrapper layout for rotated mobile */
-body.mobile-portrait-rotate .color-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-detail {
   display: block;
   padding: 6px 8px 8px;
   height: calc(var(--visible-width) - 8px) !important;
   max-height: calc(var(--visible-width) - 8px) !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -3927,11 +3936,11 @@ body.mobile-portrait-rotate .color-mobile-flex-row {
   min-height: 0;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-content-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-content-grid {
   display: contents;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .selected-color-panel {
   position: static;
   order: 1;
   flex: 0 0 auto;
@@ -3946,7 +3955,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel {
   padding: 4px 8px;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-top-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-top-row {
   order: 2;
   position: absolute;
   top: 6px;
@@ -3961,7 +3970,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .modal-top-row {
   padding: 0;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-progress {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-progress {
   position: static;
   padding: 4px 7px;
   font-size: 8px;
@@ -3971,15 +3980,15 @@ body.mobile-portrait-rotate .color-mobile-flex-row .modal-progress {
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .learning-panel {
   order: 3;
   flex: 1 0 100%;
   min-height: 0 !important;
   padding-top: 0;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel .big-splash-wrap,
-body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel .big-splash-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .selected-color-panel .big-splash-wrap,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .selected-color-panel .big-splash-image {
   width: 45px;
   height: 45px;
 }
@@ -3992,13 +4001,13 @@ body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel .big-sp
   }
 }
 
-body.mobile-portrait-rotate .learning-panel,
-body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .learning-panel,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .learning-panel {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
 }
 
-body.mobile-portrait-rotate .examples-section,
-body.mobile-portrait-rotate .quiz-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .examples-section,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .quiz-section {
   min-width: 0;
   width: 100%;
 }
@@ -4008,13 +4017,13 @@ body.mobile-portrait-rotate .quiz-section {
   margin-block: 14px;
 }
 
-body.mobile-portrait-rotate .color-modal {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-modal {
   padding-block: 9px;
   overflow: hidden !important;
   touch-action: manipulation;
 }
 
-body.mobile-portrait-rotate .color-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-detail {
   height: calc(var(--visible-width) - 28px) !important;
   max-height: calc(var(--visible-width) - 28px) !important;
   margin-block: 0;
@@ -4024,20 +4033,23 @@ body.mobile-portrait-rotate .color-detail {
 
 body.mobile-portrait-rotate.modal-open,
 body.mobile-portrait-rotate.modal-open .colors-app,
-body.mobile-portrait-rotate.modal-open .colors-hero {
+body.mobile-portrait-rotate.modal-open .colors-hero,
+body.mobile-landscape-layout.modal-open,
+body.mobile-landscape-layout.modal-open .colors-app,
+body.mobile-landscape-layout.modal-open .colors-hero {
   overflow: hidden !important;
   touch-action: none;
 }
 
 /* Final rotated mobile popup layout */
-body.mobile-portrait-rotate .color-modal.show {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-modal.show {
   align-items: center !important;
   justify-content: center !important;
   padding: 9px 34px !important;
   overflow: hidden !important;
 }
 
-body.mobile-portrait-rotate .color-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-detail {
   display: flex !important;
   flex-direction: column !important;
   width: min(96%, 760px) !important;
@@ -4048,7 +4060,7 @@ body.mobile-portrait-rotate .color-detail {
   border-radius: 18px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row {
   display: flex !important;
   flex-wrap: wrap !important;
   align-content: flex-start !important;
@@ -4059,11 +4071,11 @@ body.mobile-portrait-rotate .color-mobile-flex-row {
   min-height: 0 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-content-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-content-grid {
   display: contents !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .selected-color-panel {
   position: relative !important;
   order: 1 !important;
   flex: 0 1 auto !important;
@@ -4083,7 +4095,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel {
   box-shadow: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-top-row {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-top-row {
   position: absolute !important;
   top: 7px !important;
   right: 9px !important;
@@ -4099,7 +4111,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .modal-top-row {
   pointer-events: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-progress {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-progress {
   position: static !important;
   padding: 4px 7px !important;
   font-size: 10px !important;
@@ -4109,13 +4121,13 @@ body.mobile-portrait-rotate .color-mobile-flex-row .modal-progress {
   white-space: nowrap !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-heading-area,
-body.mobile-portrait-rotate .color-mobile-flex-row .modal-small-label,
-body.mobile-portrait-rotate .color-mobile-flex-row .detail-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-heading-area,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .modal-small-label,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .detail-title {
   display: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .sound-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .sound-btn {
   width: 28px !important;
   min-width: 28px !important;
   height: 28px !important;
@@ -4125,7 +4137,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .sound-btn {
   font-size: 13px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .say-color-message {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .say-color-message {
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
@@ -4136,26 +4148,26 @@ body.mobile-portrait-rotate .color-mobile-flex-row .say-color-message {
   white-space: nowrap !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-wrap,
-body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .big-splash-wrap,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .big-splash-image {
   width: 45px !important;
   height: 45px !important;
   margin: 0 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-fallback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .big-splash-fallback {
   width: 40px !important;
   height: 40px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .detail-color-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .detail-color-name {
   margin: 0 !important;
   font-size: 15px !important;
   line-height: 1 !important;
   white-space: nowrap !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .learning-panel {
   order: 3 !important;
   flex: 1 1 100% !important;
   display: grid !important;
@@ -4170,8 +4182,8 @@ body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
   box-shadow: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .examples-section,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-section {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .examples-section,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-section {
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
@@ -4184,20 +4196,20 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-section {
   overflow: hidden !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .section-heading,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-heading {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .section-heading,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-heading {
   margin: 0 0 4px !important;
   font-size: 15px !important;
   line-height: 1.05 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label-top {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-label-top {
   margin: 0 0 2px !important;
   font-size: 8px !important;
   line-height: 1 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .section-instruction {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .section-instruction {
   display: block !important;
   order: 3 !important;
   margin: 4px 0 0 !important;
@@ -4205,8 +4217,8 @@ body.mobile-portrait-rotate .color-mobile-flex-row .section-instruction {
   line-height: 1 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .examples-grid,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-options {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .examples-grid,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-options {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 5px !important;
@@ -4214,20 +4226,20 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-options {
   min-height: 0 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .examples-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .examples-grid {
   grid-template-columns: 1fr !important;
   grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
   padding-top: 8px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-options {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-options {
   grid-template-columns: 1fr !important;
   grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
   padding-top: 8px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-card,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-card,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -4239,32 +4251,32 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
   border-radius: 10px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-card {
   flex-direction: row !important;
   gap: 5px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option {
   flex-direction: row !important;
   gap: 7px !important;
   justify-content: flex-start !important;
   padding: 4px 6px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-image {
   width: 40px !important;
   height: 40px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option-image {
   flex: 0 0 32px !important;
   width: 32px !important;
   height: 32px !important;
   object-fit: contain !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-name,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-name,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-label {
   min-width: 0 !important;
   margin-top: 2px !important;
   padding: 1px 4px !important;
@@ -4272,12 +4284,12 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
   line-height: 1 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-name {
   margin-top: 0 !important;
   text-align: left !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-label {
   margin-top: 0 !important;
   flex: 1 1 auto !important;
   min-width: 0 !important;
@@ -4287,7 +4299,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
 }
 
 /* Fit quiz option content cleanly in the narrow rotated cards */
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -4298,7 +4310,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
   padding: 4px 7px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option-image {
   flex: 0 0 30px !important;
   width: 30px !important;
   height: 30px !important;
@@ -4306,7 +4318,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
   max-height: 30px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-label {
   flex: 1 1 auto !important;
   width: auto !important;
   min-width: 0 !important;
@@ -4327,7 +4339,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
 }
 
 /* Center the quiz content group while keeping image/text starts aligned */
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option {
   display: grid !important;
   grid-template-columns: 30px minmax(54px, max-content) !important;
   justify-content: center !important;
@@ -4340,16 +4352,16 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
   z-index: 2 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option.correct {
   overflow: hidden !important;
   z-index: 12 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-card-celebration-piece {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-card-celebration-piece {
   z-index: 20 !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct::after {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option.correct::after {
   content: "";
   position: absolute;
   inset: 2px;
@@ -4364,8 +4376,8 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct::after {
   animation: mobileQuizBubblePop 0.78s ease-out;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct .quiz-option-image,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option.correct .quiz-option-image,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option.correct .quiz-label {
   position: relative;
   z-index: 2;
 }
@@ -4387,13 +4399,13 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option.correct .quiz-la
   }
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-option-image {
   grid-column: 1 !important;
   justify-self: center !important;
   flex: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-label {
   grid-column: 2 !important;
   justify-self: start !important;
   min-width: 54px !important;
@@ -4402,7 +4414,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
 }
 
 /* Match example cards to the quiz row layout */
-body.mobile-portrait-rotate .color-mobile-flex-row .example-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-card {
   display: grid !important;
   grid-template-columns: 34px minmax(72px, max-content) !important;
   justify-content: center !important;
@@ -4413,7 +4425,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .example-card {
     inset 0 0 10px rgba(255, 255, 255, 0.85) !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-image {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-image {
   grid-column: 1 !important;
   justify-self: center !important;
   flex: none !important;
@@ -4421,7 +4433,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .example-image {
   height: 34px !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .example-name {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .example-name {
   grid-column: 2 !important;
   justify-self: start !important;
   min-width: 72px !important;
@@ -4438,8 +4450,8 @@ body.mobile-portrait-rotate .color-mobile-flex-row .example-name {
   overflow-wrap: anywhere !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .object-feedback,
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .object-feedback,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-feedback {
   min-height: 16px !important;
   margin-top: 4px !important;
   padding: 2px 6px !important;
@@ -4450,13 +4462,13 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
   text-overflow: ellipsis !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .object-feedback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .object-feedback {
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
 }
 
-body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .color-mobile-flex-row .quiz-feedback {
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;

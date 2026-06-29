@@ -191,6 +191,12 @@ body.mobile-portrait-rotate {
   overflow: hidden;
 }
 
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+}
+
 body.mobile-portrait-rotate .category-app {
   position: fixed;
   top: 50%;
@@ -202,6 +208,17 @@ body.mobile-portrait-rotate .category-app {
   overflow: hidden;
   transform: translate(-50%, -50%) rotate(90deg);
   transform-origin: center center;
+}
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) .category-app {
+  position: fixed;
+  inset: 0;
+  width: var(--visible-height);
+  height: var(--visible-width);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  transform: none;
 }
 
 /* Layout inside the rotated app. */
@@ -229,24 +246,24 @@ body.mobile-portrait-rotate .category-app {
 }
 
 /* Same layout when JS fallback class is active. */
-body.mobile-portrait-rotate .category-main {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .category-main {
   justify-content: center;
   padding: 4px 14px;
 }
 
-body.mobile-portrait-rotate .category-logo {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .category-logo {
   width: min(48%, 390px);
   max-height: calc(var(--visible-width) * 0.15);
   margin-bottom: 2px;
   animation-name: bounceLogoMobile;
 }
 
-body.mobile-portrait-rotate .category-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .category-grid {
   width: min(calc(var(--visible-height) * 0.72), 650px);
   gap: 4px 12px;
 }
 
-body.mobile-portrait-rotate .category-card img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .category-card img {
   max-height: calc(var(--visible-width) * 0.24);
 }
 

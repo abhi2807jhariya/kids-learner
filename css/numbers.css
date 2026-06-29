@@ -2236,13 +2236,22 @@ body.mobile-portrait-rotate {
   left: 0;
 }
 
-body.mobile-portrait-rotate .numbers-app {
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  transform: none;
+}
+
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .numbers-app {
   width: var(--visible-height);
   height: var(--visible-width);
   overflow: hidden;
 }
 
-body.mobile-portrait-rotate .numbers-main {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .numbers-main {
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -2254,23 +2263,23 @@ body.mobile-portrait-rotate .numbers-main {
   padding: 6px 10px 10px;
 }
 
-body.mobile-portrait-rotate .page-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .page-title {
   margin-bottom: 0;
   font-size: clamp(26px, 8vh, 42px);
 }
 
-body.mobile-portrait-rotate .numbers-subtitle {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .numbers-subtitle {
   margin-bottom: 8px;
   font-size: clamp(12px, 3vh, 18px);
 }
 
-body.mobile-portrait-rotate .numbers-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .numbers-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(6px, 1.6vh, 12px);
   max-width: 100%;
 }
 
-body.mobile-portrait-rotate .number-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-card {
   min-height: clamp(92px, 27vh, 128px);
   padding: 6px 5px;
   border-width: 3px;
@@ -2280,29 +2289,29 @@ body.mobile-portrait-rotate .number-card {
     inset 0 0 18px rgba(255, 255, 255, 0.62);
 }
 
-body.mobile-portrait-rotate .number-img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-img {
   max-width: clamp(42px, 13vh, 68px);
   height: clamp(42px, 13vh, 68px);
 }
 
-body.mobile-portrait-rotate .object-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-grid {
   min-height: clamp(28px, 9vh, 44px);
   margin-top: 4px;
   gap: 3px;
 }
 
-body.mobile-portrait-rotate .object-img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .object-img {
   width: clamp(13px, 4.4vh, 21px);
   height: clamp(13px, 4.4vh, 21px);
 }
 
-body.mobile-portrait-rotate .number-star {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-star {
   top: -7px;
   right: -6px;
   width: clamp(22px, 7vh, 31px);
 }
 
-body.mobile-portrait-rotate .number-modal {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-modal {
   width: var(--visible-height);
   height: var(--visible-width);
   padding: 5px 8px;
@@ -2312,7 +2321,7 @@ body.mobile-portrait-rotate .number-modal {
   touch-action: none;
 }
 
-body.mobile-portrait-rotate .number-detail {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-detail {
   width: 98%;
   max-height: calc(var(--visible-width) - 10px);
   padding: 39px 50px 10px;
@@ -2320,12 +2329,12 @@ body.mobile-portrait-rotate .number-detail {
   border-radius: 22px;
 }
 
-body.mobile-portrait-rotate .modal-content {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-content {
   grid-template-columns: minmax(165px, 0.7fr) minmax(310px, 1.4fr);
   gap: 10px;
 }
 
-body.mobile-portrait-rotate .modal-progress {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-progress {
   top: 7px;
   left: 10px;
   padding: 3px 9px 3px 5px;
@@ -2333,12 +2342,12 @@ body.mobile-portrait-rotate .modal-progress {
   font-size: 12px;
 }
 
-body.mobile-portrait-rotate .modal-progress img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-progress img {
   width: 22px;
   height: 22px;
 }
 
-body.mobile-portrait-rotate .number-close {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-close {
   top: 6px;
   right: 9px;
   width: 34px;
@@ -2347,7 +2356,7 @@ body.mobile-portrait-rotate .number-close {
   font-size: 24px;
 }
 
-body.mobile-portrait-rotate .modal-nav {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-nav {
   width: 38px;
   height: 38px;
   border-width: 3px;
@@ -2355,77 +2364,77 @@ body.mobile-portrait-rotate .modal-nav {
   box-shadow: 0 4px 0 #1569b6;
 }
 
-body.mobile-portrait-rotate .modal-prev {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-prev {
   left: 7px;
 }
 
-body.mobile-portrait-rotate .modal-next {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-next {
   right: 7px;
 }
 
-body.mobile-portrait-rotate .number-showcase,
-body.mobile-portrait-rotate .count-activity {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-showcase,
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .count-activity {
   min-height: 220px;
 }
 
-body.mobile-portrait-rotate .number-showcase {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-showcase {
   padding: 5px 8px;
 }
 
-body.mobile-portrait-rotate .number-glow {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-glow {
   min-height: 122px;
 }
 
-body.mobile-portrait-rotate .number-glow::before {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .number-glow::before {
   width: 128px;
   height: 128px;
 }
 
-body.mobile-portrait-rotate .modal-number-img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-number-img {
   width: 112px;
   height: 126px;
 }
 
-body.mobile-portrait-rotate .modal-number-word {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-number-word {
   margin: -2px 0 6px;
   font-size: clamp(28px, 7vh, 40px);
 }
 
-body.mobile-portrait-rotate .say-number-bubble {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .say-number-bubble {
   padding: 5px 10px;
   border-width: 2px;
   font-size: 12px;
 }
 
-body.mobile-portrait-rotate .say-number-bubble strong {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .say-number-bubble strong {
   font-size: 15px;
 }
 
-body.mobile-portrait-rotate .count-activity {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .count-activity {
   padding: 8px;
   border-width: 3px;
   border-radius: 20px;
 }
 
-body.mobile-portrait-rotate .activity-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .activity-title {
   padding: 6px 12px;
   font-size: 14px;
   box-shadow: 0 4px 0 #3b1c9c;
 }
 
-body.mobile-portrait-rotate .live-counter {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .live-counter {
   min-width: 68px;
   padding: 3px 8px;
   border-width: 2px;
   font-size: 16px;
 }
 
-body.mobile-portrait-rotate .activity-instruction {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .activity-instruction {
   margin: 6px 0 4px;
   font-size: 12px;
 }
 
-body.mobile-portrait-rotate .animated-object-stage {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .animated-object-stage {
   min-height: 104px;
   padding: 7px 9px 20px;
   gap: 5px;
@@ -2433,7 +2442,7 @@ body.mobile-portrait-rotate .animated-object-stage {
   border-radius: 16px;
 }
 
-body.mobile-portrait-rotate .count-word-display {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .count-word-display {
   min-width: 82px;
   margin-top: 5px;
   padding: 4px 14px;
@@ -2441,32 +2450,32 @@ body.mobile-portrait-rotate .count-word-display {
   box-shadow: 0 3px 0 var(--modal-dark);
 }
 
-body.mobile-portrait-rotate .success-message {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message {
   bottom: 6px;
   padding: 5px 9px;
   border-width: 2px;
   white-space: nowrap;
 }
 
-body.mobile-portrait-rotate .success-message img {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message img {
   width: 25px;
   height: 25px;
 }
 
-body.mobile-portrait-rotate .success-message strong {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message strong {
   font-size: 12px;
 }
 
-body.mobile-portrait-rotate .success-message span {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .success-message span {
   font-size: 10px;
 }
 
-body.mobile-portrait-rotate .modal-footer-controls {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-footer-controls {
   margin-top: 6px;
   gap: 10px;
 }
 
-body.mobile-portrait-rotate .modal-action-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .modal-action-btn {
   min-width: 104px;
   padding: 6px 12px;
   font-size: 13px;

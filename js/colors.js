@@ -672,19 +672,32 @@ function getViewportSize() {
 function updateMobileLayout() {
   const { width, height } =
     getViewportSize();
+  const shortSide = Math.min(width, height);
+  const longSide = Math.max(width, height);
+  const isMobileLandscapeLayout =
+    shortSide <= 767 && longSide <= 1024;
+  const visibleWidth =
+    isMobileLandscapeLayout ? shortSide : width;
+  const visibleHeight =
+    isMobileLandscapeLayout ? longSide : height;
 
   document.documentElement.style.setProperty(
     "--visible-width",
-    `${width}px`
+    `${visibleWidth}px`
   );
 
   document.documentElement.style.setProperty(
     "--visible-height",
-    `${height}px`
+    `${visibleHeight}px`
   );
 
   const shouldRotate =
-    width <= 767 && height > width;
+    isMobileLandscapeLayout && height > width;
+
+  document.body.classList.toggle(
+    "mobile-landscape-layout",
+    isMobileLandscapeLayout
+  );
 
   document.body.classList.toggle(
     "mobile-portrait-rotate",
@@ -693,7 +706,7 @@ function updateMobileLayout() {
 
   if (colorsApp) {
     colorsApp.style.height =
-      shouldRotate ? `${width}px` : "";
+      shouldRotate ? `${visibleWidth}px` : "";
   }
 }
 
@@ -713,7 +726,7 @@ function getScrollableElement(...elements) {
 function getRotatedScrollTarget(event) {
   if (
     !document.body.classList.contains(
-      "mobile-portrait-rotate"
+      "mobile-landscape-layout"
     )
   ) {
     return null;
@@ -738,7 +751,7 @@ function getRotatedScrollTarget(event) {
 function isLockedRotatedColorModal(event) {
   return (
     document.body.classList.contains(
-      "mobile-portrait-rotate"
+      "mobile-landscape-layout"
     ) &&
     colorModal?.classList.contains("show") &&
     event.target.closest("#colorModal")
@@ -1928,7 +1941,7 @@ function createQuizCardCelebration(card) {
 
   const isRotatedMobile =
     document.body.classList.contains(
-      "mobile-portrait-rotate"
+      "mobile-landscape-layout"
     );
 
   const maxDistance =

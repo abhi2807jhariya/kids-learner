@@ -443,71 +443,80 @@ body.mobile-portrait-rotate {
   top: 0;
   left: 0;
 }
-body.mobile-portrait-rotate .alphabet-app {
+
+body.mobile-landscape-layout:not(.mobile-portrait-rotate) {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  transform: none;
+}
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .alphabet-app {
   width: var(--visible-height);
   height: var(--visible-width);
 }
-body.mobile-portrait-rotate .alphabet-main {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .alphabet-main {
   align-items: center;
   padding: 8px 12px;
 }
-body.mobile-portrait-rotate .alphabet-grid {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .alphabet-grid {
   grid-template-columns: repeat(9, minmax(0, 1fr));
   gap: clamp(6px, 1.6vh, 12px);
   width: min(100%, 1120px);
 }
-body.mobile-portrait-rotate .letter-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .letter-card {
   width: clamp(44px, 12.2vh, 76px);
   height: clamp(44px, 12.2vh, 76px);
   border-width: 3px;
   border-radius: 14px;
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.25);
 }
-body.mobile-portrait-rotate .letter-card:before {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .letter-card:before {
   inset: 7px;
   border-width: 2px;
   border-radius: 9px;
 }
-body.mobile-portrait-rotate .letter-card span {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .letter-card span {
   font-size: clamp(28px, 7.5vh, 48px);
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
 }
-body.mobile-portrait-rotate .cube-modal {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .cube-modal {
   width: var(--visible-height);
   height: var(--visible-width);
   padding: 8px;
 }
-body.mobile-portrait-rotate .alphabet-detail-card {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .alphabet-detail-card {
   width: min(92vw, 650px);
   min-height: 0;
   padding: 8px 72px 10px;
 }
-body.mobile-portrait-rotate .detail-title {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-title {
   margin-bottom: 6px;
   font-size: clamp(24px, 7vh, 40px);
 }
-body.mobile-portrait-rotate .detail-image-box {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-image-box {
   width: min(190px, 27vw);
   min-height: clamp(96px, 28vh, 155px);
   margin-bottom: 8px;
 }
-body.mobile-portrait-rotate .alphabet-image-fallback {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .alphabet-image-fallback {
   width: min(180px, 26vw);
   min-height: clamp(96px, 28vh, 145px);
   border-width: 4px;
   border-radius: 22px;
 }
-body.mobile-portrait-rotate .fallback-letter {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .fallback-letter {
   font-size: clamp(56px, 14vh, 84px);
 }
-body.mobile-portrait-rotate .fallback-word {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .fallback-word {
   font-size: clamp(16px, 4vh, 24px);
 }
-body.mobile-portrait-rotate .detail-letters {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-letters {
   gap: 14px;
   margin-bottom: 10px;
 }
-body.mobile-portrait-rotate .detail-letters span {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-letters span {
   width: clamp(48px, 12vh, 68px);
   height: clamp(48px, 12vh, 68px);
   border-width: 4px;
@@ -515,41 +524,41 @@ body.mobile-portrait-rotate .detail-letters span {
   font-size: clamp(32px, 8vh, 46px);
   box-shadow: 0 5px 0 #321080;
 }
-body.mobile-portrait-rotate .sound-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .sound-btn {
   min-width: clamp(52px, 12vh, 70px);
   min-height: clamp(42px, 9vh, 56px);
   padding: 8px 14px;
   font-size: clamp(18px, 5vh, 26px);
   box-shadow: 0 5px 0 #c62828;
 }
-body.mobile-portrait-rotate .close-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .close-btn {
   top: 8px;
   right: 10px;
   width: clamp(36px, 8vh, 48px);
   height: clamp(36px, 8vh, 48px);
   font-size: clamp(24px, 5.5vh, 32px);
 }
-body.mobile-portrait-rotate .cube-navigation {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .cube-navigation {
   top: 52%;
 }
-body.mobile-portrait-rotate .nav-btn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .nav-btn {
   width: clamp(38px, 9vh, 52px);
   height: clamp(38px, 9vh, 52px);
   padding: 0;
   border-width: 4px;
   font-size: 0;
 }
-body.mobile-portrait-rotate #prevLetterBtn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #prevLetterBtn {
   left: 12px;
 }
-body.mobile-portrait-rotate #nextLetterBtn {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #nextLetterBtn {
   right: 12px;
 }
-body.mobile-portrait-rotate #prevLetterBtn:before {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #prevLetterBtn:before {
   content: "\25C0";
   font-size: clamp(16px, 4vh, 22px);
 }
-body.mobile-portrait-rotate #nextLetterBtn:before {
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) #nextLetterBtn:before {
   content: "\25B6";
   font-size: clamp(16px, 4vh, 22px);
 }
