@@ -1926,8 +1926,18 @@ function createQuizCardCelebration(card) {
     "#ff6ec7"
   ];
 
+  const isRotatedMobile =
+    document.body.classList.contains(
+      "mobile-portrait-rotate"
+    );
+
   const maxDistance =
-    Math.min(card.clientWidth, card.clientHeight) * 0.48;
+    isRotatedMobile
+      ? Math.max(
+        18,
+        Math.min(card.clientWidth, card.clientHeight) * 0.42
+      )
+      : Math.min(card.clientWidth, card.clientHeight) * 0.48;
 
   for (let index = 0; index < 28; index += 1) {
     const piece = document.createElement("span");
