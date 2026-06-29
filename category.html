@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Kids Learner - Dashboard</title>
+
+  <!-- Existing project paths are preserved -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+</head>
+
+<body class="category">
+  <!-- Header, page and footer rotate together on a portrait mobile. -->
+  <div id="categoryApp" class="category-app">
+    <div id="header" class="category-header"></div>
+
+    <main class="category-main page-scroll">
+      <img
+        src="assets/images/category-images/logo.png"
+        class="category-logo"
+        alt="Kids Learner"
+      >
+
+      <section class="category-grid" aria-label="Learning categories">
+        <a href="alphabet.html" class="category-card" aria-label="Learn Alphabet">
+          <img src="assets/images/category-images/alphabet.png" alt="Alphabet">
+        </a>
+
+        <a href="numbers.html" class="category-card" aria-label="Learn Numbers">
+          <img src="assets/images/category-images/numbeer.png" alt="Numbers">
+        </a>
+
+        <a href="colors.html" class="category-card" aria-label="Learn Colors">
+          <img src="assets/images/category-images/color.png" alt="Colors">
+        </a>
+
+        <a href="geometry.html" class="category-card" aria-label="Learn Geometry">
+          <img src="assets/images/category-images/geometric.png" alt="Geometry">
+        </a>
+      </section>
+    </main>
+
+    <div id="footer" class="category-footer"></div>
+  </div>
+
+  <script src="js/include.js"></script>
+  <script src="js/category.js"></script>
+</body>
+
+</html>

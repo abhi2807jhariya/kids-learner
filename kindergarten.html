@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Kindergarten</title>
+
+  <!-- Existing project paths are preserved -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/kindergarten.css">
+</head>
+
+<body class="kindergarten">
+  <!-- Header, page content and footer rotate together on portrait mobile. -->
+  <div id="kindergartenApp" class="kindergarten-app">
+    <div id="header" class="kindergarten-header"></div>
+
+    <main class="kindergarten-main page-scroll">
+      <img
+        src="assets/images/kinder-images/explore.png"
+        class="explore-img"
+        alt="Explore"
+      >
+
+      <a
+        href="category.html"
+        class="kindergarten-card"
+        aria-label="Open Kindergarten learning categories"
+      >
+        <img
+          src="assets/images/kinder-images/kindergarten.png"
+          alt="Kindergarten"
+        >
+      </a>
+    </main>
+
+    <div id="footer" class="kindergarten-footer"></div>
+  </div>
+
+  <script src="js/include.js"></script>
+  <script src="js/kindergarten.js"></script>
+</body>
+
+</html>

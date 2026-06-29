@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Learn Geometry</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/geometry.css">
+</head>
+<body class="geometry-page">
+  <div id="geometryApp" class="geometry-app">
+    <div id="header" class="geometry-header"></div>
+
+    <main class="geometry-main page-scroll">
+      <span class="floating-shape floating-shape-one" aria-hidden="true">&#9675;</span>
+      <span class="floating-shape floating-shape-two" aria-hidden="true">&#9651;</span>
+      <span class="floating-shape floating-shape-three" aria-hidden="true">&#9671;</span>
+      <span class="floating-shape floating-shape-four" aria-hidden="true">&#9733;</span>
+
+      <section id="shapeGridScreen" class="geometry-screen grid-screen is-active" aria-labelledby="gridTitle">
+        <div class="screen-heading grid-heading">
+          <h1 id="gridTitle" class="page-title text-center text-4xl sm:text-5xl lg:text-6xl font-black mb-1 leading-none">
+            <span class="inline-block [font-family:'Comic_Sans_MS','Trebuchet_MS',Arial,sans-serif] text-transparent [-webkit-text-fill-color:transparent] bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(180deg,#e6004c_0%,#ff1744_15%,#ff6d00_29%,#ffc400_42%,#00a83b_56%,#008fcf_70%,#174bcc_84%,#6a1b9a_100%)] bg-[length:100%_100%] bg-no-repeat shadow-none drop-shadow-none [text-shadow:none]">Learn Geometry</span>
+          </h1>
+          <p>Tap a shape and discover!</p>
+        </div>
+
+        <div class="grid-layout">
+          <aside class="mascot-panel" aria-hidden="true">
+            <div class="speech-bubble">Let's explore<br>shapes!</div>
+            <div class="lion-mascot"><img src="assets/images/geometry/lion-mascot.png" alt=""></div>
+          </aside>
+          <div id="shapeGrid" class="shape-grid" aria-label="Choose a shape"></div>
+        </div>
+
+        <button id="gridSoundButton" class="round-action grid-sound" type="button" aria-label="Hear instructions">
+          <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <section id="detailScreen" class="geometry-screen detail-screen" aria-labelledby="detailTitle" hidden>
+        <button class="round-action close-screen" type="button" data-action="close" aria-label="Close details">&times;</button>
+
+        <div class="screen-heading detail-heading">
+          <h2 id="detailTitle" class="shape-title">Circle</h2>
+          <p>Look, listen and learn!</p>
+        </div>
+
+        <div class="detail-shell">
+          <aside class="detail-mascot" aria-hidden="true">
+            <div id="detailSpeech" class="speech-bubble detail-speech">A circle has zero straight sides and zero corners.</div>
+            <div class="lion-mascot small-lion"><img src="assets/images/geometry/lion-mascot.png" alt=""></div>
+          </aside>
+
+          <div class="detail-center">
+            <div class="detail-image-stage">
+              <img id="detailInfographicImage" class="detail-infographic" src="assets/images/geometry/circle/corner.png" alt="A circle has zero straight sides and zero corners">
+            </div>
+            <div class="detail-controls compact-controls">
+              <button id="previousShapeButton" class="round-action" type="button" aria-label="Previous shape">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button id="detailSoundButton" class="round-action" type="button" aria-label="Hear shape information">
+                <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+              </button>
+              <button id="nextShapeButton" class="round-action" type="button" aria-label="Next shape">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <aside id="detailObjectsPanel" class="detail-objects-panel is-revealed" aria-labelledby="objectsTitle">
+            <div class="objects-panel-head">
+              <img id="objectsShapeImage" class="objects-shape-image" src="assets/images/geometry/circle.png" alt="Circle">
+              <div class="objects-head-copy">
+                <h3 id="objectsTitle">Circle Objects</h3>
+                <p id="objectsSubtitle">Tap an object to hear its name.</p>
+              </div>
+            </div>
+            <div id="objectCards" class="object-cards side-stack"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer" class="geometry-footer"></div>
+  </div>
+
+  <script src="js/include.js"></script>
+  <script src="js/geometry.js"></script>
+</body>
+</html>

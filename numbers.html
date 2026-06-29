@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Numbers Learning</title>
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/numbers.css">
+</head>
+
+<body class="numbers-page">
+
+  <div id="numbersApp" class="numbers-app">
+
+    <div id="header" class="numbers-header"></div>
+
+    <main class="numbers-main page-scroll">
+
+<h1 class="page-title text-center text-4xl sm:text-5xl lg:text-6xl font-black mb-2 leading-none">
+  <span class="inline-block
+    [font-family:'Comic_Sans_MS','Trebuchet_MS',Arial,sans-serif]
+    text-transparent
+    [-webkit-text-fill-color:transparent]
+    bg-clip-text
+    [-webkit-background-clip:text]
+    bg-[linear-gradient(180deg,#e6004c_0%,#ff1744_15%,#ff6d00_29%,#ffc400_42%,#00a83b_56%,#008fcf_70%,#174bcc_84%,#6a1b9a_100%)]
+    bg-[length:100%_100%]
+    bg-no-repeat
+    shadow-none
+    drop-shadow-none
+    [text-shadow:none]">
+    Choose a Number
+  </span>
+</h1>
+
+    <p class="numbers-subtitle text-center text-lg sm:text-2xl font-black text-purple-900 mb-7 sm:mb-9">
+      Let's learn numbers 1 to 10!
+    </p>
+
+    <section class="numbers-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 w-full max-w-7xl mx-auto"
+      id="numbersGrid"></section>
+
+    </main>
+
+    <div id="footer" class="numbers-footer"></div>
+
+  </div>
+
+  <!-- ========================================
+       NUMBER LEARNING MODAL
+  ========================================= -->
+
+  <div class="number-modal" id="numberModal" aria-hidden="true">
+
+    <div class="number-detail" role="dialog" aria-modal="true" aria-labelledby="numberWord">
+
+      <!-- Fireworks, confetti and ribbons -->
+
+      <div class="celebration-burst" id="celebrationBurst" aria-hidden="true"></div>
+
+      <!-- Progress -->
+
+      <div class="modal-progress">
+
+        <img src="assets/images/number/star.png" alt="">
+
+        <span id="modalProgress">
+          1 / 10
+        </span>
+
+      </div>
+
+      <!-- Close -->
+
+      <button type="button" class="number-close" id="numberClose" aria-label="Close number lesson">
+        &times;
+      </button>
+
+      <!-- Previous -->
+
+      <button type="button" class="modal-nav modal-prev" id="numberPrev" aria-label="Previous number">
+        &lsaquo;
+      </button>
+
+      <!-- Next -->
+
+      <button type="button" class="modal-nav modal-next" id="numberNext" aria-label="Next number">
+        &rsaquo;
+      </button>
+
+      <div class="modal-content">
+
+        <!-- Number section -->
+
+        <section class="number-showcase">
+
+          <div class="number-glow">
+
+            <span class="number-sparkle sparkle-1">
+              *
+            </span>
+
+            <span class="number-sparkle sparkle-2">
+              *
+            </span>
+
+            <span class="number-sparkle sparkle-3">
+              *
+            </span>
+
+            <img src="assets/images/number/one.png" alt="Number 1" class="modal-number-img" id="modalNumberImg">
+
+          </div>
+
+          <h2 class="modal-number-word" id="numberWord">
+            One
+          </h2>
+
+          <div class="say-number-bubble">
+
+            <span>
+              Say it:
+            </span>
+
+            <strong id="sayNumberWord">
+              One!
+            </strong>
+
+          </div>
+
+        </section>
+
+        <!-- Counting animation -->
+
+        <section class="count-activity">
+
+          <div class="activity-heading">
+
+            <div class="activity-title">
+              Watch &amp; Count!
+            </div>
+
+            <div class="live-counter">
+
+              <span id="currentCount">
+                0
+              </span>
+
+              <small>
+                /
+              </small>
+
+              <strong id="targetCount">
+                1
+              </strong>
+
+            </div>
+
+          </div>
+
+          <p class="activity-instruction" id="activityInstruction">
+            Watch the apple appear!
+          </p>
+
+          <div class="animated-object-stage" id="animatedObjectStage"></div>
+
+          <div class="count-word-display" id="countWordDisplay">
+            Ready?
+          </div>
+
+          <div class="success-message" id="successMessage">
+
+            <img src="assets/images/number/star.png" alt="">
+
+            <div>
+
+              <strong>
+                Great Job!
+              </strong>
+
+              <span id="successText">
+                You counted 1 apple!
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- Controls -->
+
+      <div class="modal-footer-controls">
+
+        <button type="button" class="modal-action-btn replay-btn" id="replayCountBtn">
+          <span>&#8635;</span>
+          Replay
+        </button>
+
+        <button type="button" class="modal-action-btn sound-btn" id="numberSoundBtn" aria-label="Play number sound">
+          <span><i class="fa-solid fa-volume-high" aria-hidden="true"></i></span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================
+       MOBILE PORTRAIT ROTATE SCREEN
+  ========================================= -->
+
+  <div class="rotate-device" id="rotateDevice">
+
+    <div class="rotate-device-card">
+
+      <div class="phone-rotate-icon">
+
+        <div class="phone-shape"></div>
+
+        <div class="rotate-arrow">
+          &#8635;
+        </div>
+
+      </div>
+
+      <h2>
+        Rotate Your Phone
+      </h2>
+
+      <p>
+        This learning activity works best in landscape mode.
+      </p>
+
+      <button type="button" id="landscapeButton">
+        Open Landscape
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="js/include.js"></script>
+  <script src="js/numbers.js"></script>
+
+</body>
+
+</html>

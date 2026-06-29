@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Colors Learning</title>
+
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/colors.css" />
+  </head>
+
+  <body class="colors-page">
+    <!-- Page par selected dark color effect -->
+    <div
+      class="page-color-overlay"
+      id="pageColorOverlay"
+      aria-hidden="true"
+    ></div>
+
+    <div id="colorsApp" class="colors-app">
+      <div id="header"></div>
+
+      <main
+        class="colors-hero page-scroll relative flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-3 sm:px-5 py-7 sm:py-9 pb-16"
+      >
+      <div class="floating-bubble bubble-1"></div>
+      <div class="floating-bubble bubble-2"></div>
+      <div class="floating-bubble bubble-3"></div>
+      <div class="floating-bubble bubble-4"></div>
+
+      <h1
+        class="page-title text-center text-4xl sm:text-5xl lg:text-6xl font-black mb-2 leading-none"
+      >
+        <span
+          class="inline-block [font-family:'Comic_Sans_MS','Trebuchet_MS',Arial,sans-serif] text-transparent [-webkit-text-fill-color:transparent] bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(180deg,#ff1717_0%,#ff1717_15%,#ff6a00_28%,#ffe600_42%,#39d353_57%,#16a9ed_72%,#245bdb_85%,#7625c9_100%)] bg-[length:100%_100%] bg-no-repeat shadow-none drop-shadow-none [text-shadow:none]"
+        >
+          Learn Colors
+        </span>
+      </h1>
+
+      <p
+        class="page-subtitle text-center text-lg sm:text-2xl font-black text-purple-900 mb-7 sm:mb-9"
+      >
+        Tap a paint splash and hear the color!
+      </p>
+
+      <section
+        class="colors-grid relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-7 w-full max-w-6xl mx-auto"
+        id="colorsGrid"
+      ></section>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <!-- ======================================
+       COLOR LEARNING POPUP
+  ======================================= -->
+
+    <div class="color-modal" id="colorModal" aria-hidden="true">
+      <button
+        class="close-btn"
+        id="closeColorBtn"
+        type="button"
+        aria-label="Close color popup"
+      >
+        &times;
+      </button>
+
+      <button
+        class="nav-btn modal-prev-btn"
+        id="prevColorBtn"
+        type="button"
+        aria-label="Previous color"
+      >
+        &#10094;
+      </button>
+
+      <button
+        class="nav-btn modal-next-btn"
+        id="nextColorBtn"
+        type="button"
+        aria-label="Next color"
+      >
+        &#10095;
+      </button>
+
+      <div class="color-detail" id="colorDetail">
+        <div
+          class="popup-color-wave"
+          id="popupColorWave"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="modal-particles"
+          id="modalParticles"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="celebration-layer"
+          id="celebrationLayer"
+          aria-hidden="true"
+        ></div>
+
+        <div class="color-mobile-flex-row">
+          <div class="modal-top-row">
+            <div class="modal-progress" id="modalProgress">Color 1 of 10</div>
+
+            <div class="modal-heading-area">
+              <span class="modal-small-label"> Let's Learn </span>
+
+              <h2 class="detail-title" id="colorTitle">Red Color</h2>
+            </div>
+          </div>
+
+          <div class="modal-content-grid">
+            <!-- LEFT: selected color -->
+            <section class="selected-color-panel">
+              <div class="big-splash-wrap">
+                <img
+                  class="big-splash-image"
+                  id="bigSplashImage"
+                  src=""
+                  alt=""
+                  draggable="false"
+                />
+
+                <div
+                  class="big-splash-fallback"
+                  id="bigSplashFallback"
+                  aria-hidden="true"
+                ></div>
+
+                <span class="splash-shine shine-one"></span>
+                <span class="splash-shine shine-two"></span>
+                <span class="splash-shine shine-three"></span>
+              </div>
+
+              <div class="detail-color-name" id="detailColorName">RED</div>
+
+              <div class="say-color-message">
+                Say it:
+                <strong id="sayColorName">Red!</strong>
+              </div>
+
+              <button class="sound-btn" id="soundBtn" type="button" aria-label="Hear color">
+                <span><i class="fa-solid fa-volume-high" aria-hidden="true"></i></span>
+                <span class="sound-wave"></span>
+              </button>
+            </section>
+
+          <!-- RIGHT: examples + game -->
+          <section class="learning-panel">
+            <section class="examples-section">
+              <h3 class="section-heading" id="examplesHeading">
+                Things that are Red
+              </h3>
+
+              <p class="section-instruction">
+                Tap any picture to hear its name.
+              </p>
+
+              <div class="examples-grid" id="examplesGrid"></div>
+
+              <div class="object-feedback" id="objectFeedback">
+                Tap a picture to hear its name.
+              </div>
+            </section>
+
+            <section class="quiz-section">
+              <span class="quiz-label-top"> Color Challenge </span>
+
+              <h3 class="flex justify-center quiz-heading" id="quizHeading">
+                Tap the Red Object!
+              </h3>
+
+              <p class="section-instruction">
+                Look carefully and choose the correct picture.
+              </p>
+
+              <div class="quiz-options" id="quizOptions"></div>
+
+              <div class="quiz-feedback" id="quizFeedback">
+                Choose the correct object.
+              </div>
+            </section>
+          </section>
+          </div>
+        </div>
+
+        <div class="success-message" id="successMessage" aria-live="polite">
+          <strong>Great Job!</strong>
+          <span id="successText"> Apple is Red. </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/include.js"></script>
+    <script src="js/colors.js"></script>
+  </body>
+</html>

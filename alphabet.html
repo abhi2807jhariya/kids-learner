@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ABC Alphabet</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/alphabet.css">
+</head>
+
+<body class="alphabet">
+  <div id="alphabetApp" class="alphabet-app">
+    <div id="header" class="alphabet-header"></div>
+    <main class="alphabet-main page-scroll">
+      <div class="alphabet-grid" id="alphabetGrid"></div>
+    </main>
+    <div id="footer" class="alphabet-footer"></div>
+  </div>
+  <div class="cube-modal" id="cubeModal">
+    <button class="close-btn" id="closeBtn" aria-label="Close">&times;</button>
+    <div class="cube-navigation">
+      <button id="prevLetterBtn" class="nav-btn">&larr; Previous</button>
+      <button id="nextLetterBtn" class="nav-btn">Next &rarr;</button>
+    </div>
+    <div class="alphabet-detail-card">
+      <h2 id="cubeHeading" class="detail-title">A for Apple</h2>
+      <div class="detail-image-box"><img id="frontImage" src="" alt=""></div>
+      <div class="detail-letters"><span id="frontLetter">A</span><span id="backLetter">a</span></div>
+      <button class="sound-btn" id="soundBtn" aria-label="Play sound">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <script src="js/include.js"></script>
+  <script src="js/alphabet.js"></script>
+</body>
+
+</html>

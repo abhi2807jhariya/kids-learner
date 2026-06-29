@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Choose Language</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/language.css">
+</head>
+<body class="language-page h-[100dvh] overflow-hidden">
+<main id="languageScreen" class="language-screen page-scroll w-screen h-[100dvh] relative overflow-y-auto overflow-x-hidden flex items-center justify-center px-3 py-24">
+        <div class="title-banner">
+            <img src="assets/images/language-images/adventure.png" alt="Choose Your Language" class="title-image" />
+        </div>
+
+        <div class="lion-box" id="lionBox">
+            <img id="lionImg" src="assets/images/language-images/cute-line.png" alt="Lion" />
+            <div class="bubble lion-bubble">Great Choice!</div>
+            <div class="dust dust-1"></div>
+            <div class="dust dust-2"></div>
+            <div class="dust dust-3"></div>
+        </div>
+
+        <div class="selected-animal-box" id="selectedAnimalBox">
+            <img id="selectedAnimalImg" src="" alt="" />
+            <div class="bubble animal-bubble" id="animalBubble">Let's Learn!</div>
+        </div>
+
+        <button class="arrow arrow-left" id="prevBtn">&lsaquo;</button>
+
+        <section class="cards-wrapper" id="cardsWrapper"></section>
+
+        <button class="arrow arrow-right" id="nextBtn">&rsaquo;</button>
+
+        <button class="continue-btn" id="continueBtn" disabled>
+            Continue <span>&rarr;</span>
+        </button>
+    </main>
+
+  <script src="js/language.js"></script>
+</body>
+</html>

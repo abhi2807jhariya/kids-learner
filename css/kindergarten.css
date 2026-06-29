@@ -1,0 +1,285 @@
+/* =========================================================
+   KINDERGARTEN PAGE
+   - Desktop/tablet: normal responsive layout
+   - Physical mobile landscape: normal landscape layout
+   - Portrait mobile up to 767px: complete app rotates 90deg
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --visible-width: 100vw;
+  --visible-height: 100dvh;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+  background: #79dcff;
+}
+
+body.kindergarten {
+  width: 100%;
+  height: var(--visible-height);
+  min-height: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: url("../assets/images/kinder-images/background.png") center / cover no-repeat;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Complete page: header + main + footer */
+.kindergarten-app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: var(--visible-height);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: url("../assets/images/kinder-images/background.png") center / cover no-repeat;
+}
+
+.kindergarten-header,
+.kindergarten-footer {
+  position: relative;
+  z-index: 10;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.kindergarten-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(12px, 2.2vh, 26px) clamp(12px, 2.2vw, 28px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.explore-img {
+  display: block;
+  width: min(92%, 620px);
+  max-height: min(22vh, 190px);
+  margin: 0 0 clamp(10px, 2vh, 24px);
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: bounceLogo 2s ease-in-out infinite;
+}
+
+.kindergarten-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(92%, 620px);
+  min-width: 0;
+  min-height: 0;
+  border-radius: 30px;
+  outline: none;
+  touch-action: manipulation;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.kindergarten-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: min(44vh, 390px);
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.kindergarten-card:hover,
+.kindergarten-card:focus-visible {
+  transform: translateY(-4px) scale(1.045);
+  filter: brightness(1.04);
+}
+
+.kindergarten-card:active,
+.kindergarten-card.clicked {
+  transform: scale(0.97);
+}
+
+@keyframes bounceLogo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Physical mobile landscape: no rotation is required. */
+@media screen and (orientation: landscape) and (max-width: 1000px) and (max-height: 540px) {
+  .kindergarten-main {
+    justify-content: center;
+    padding: 3px 14px;
+  }
+
+  .explore-img {
+    width: min(50%, 430px);
+    max-height: 15vh;
+    margin-bottom: 3px;
+    animation-name: bounceLogoMobile;
+  }
+
+  .kindergarten-card {
+    width: min(62vw, 560px);
+  }
+
+  .kindergarten-card img {
+    max-height: 49vh;
+  }
+}
+
+/* CSS-only portrait rotation. */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body.kindergarten .kindergarten-app {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: var(--visible-height);
+    height: var(--visible-width);
+    min-width: 0;
+    min-height: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+  }
+
+  .kindergarten-main {
+    justify-content: center;
+    padding: 3px 14px;
+  }
+
+  .explore-img {
+    width: min(50%, 430px);
+    max-height: 15vw;
+    margin-bottom: 3px;
+    animation-name: bounceLogoMobile;
+  }
+
+  .kindergarten-card {
+    width: min(62vh, 560px);
+  }
+
+  .kindergarten-card img {
+    max-height: 49vw;
+  }
+}
+
+/*
+  JavaScript fallback. This also makes Chrome DevTools responsive
+  mode reliable when its orientation media query behaves differently.
+*/
+body.mobile-portrait-rotate {
+  width: var(--visible-width);
+  height: var(--visible-height);
+  overflow: hidden;
+}
+
+body.mobile-portrait-rotate .kindergarten-app {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: var(--visible-height);
+  height: var(--visible-width);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center center;
+}
+
+body.mobile-portrait-rotate .kindergarten-main {
+  justify-content: center;
+  padding: 3px 14px;
+}
+
+body.mobile-portrait-rotate .explore-img {
+  width: min(50%, 430px);
+  max-height: calc(var(--visible-width) * 0.15);
+  margin-bottom: 3px;
+  animation-name: bounceLogoMobile;
+}
+
+body.mobile-portrait-rotate .kindergarten-card {
+  width: min(calc(var(--visible-height) * 0.62), 560px);
+}
+
+body.mobile-portrait-rotate .kindergarten-card img {
+  max-height: calc(var(--visible-width) * 0.49);
+}
+
+@keyframes bounceLogoMobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .explore-img {
+    width: min(78%, 610px);
+  }
+
+  .kindergarten-card {
+    width: min(78%, 620px);
+  }
+}
+
+/* Very short desktop/landscape windows */
+@media screen and (orientation: landscape) and (min-width: 1001px) and (max-height: 650px) {
+  .kindergarten-main {
+    padding-block: 5px;
+  }
+
+  .explore-img {
+    max-height: 16vh;
+    margin-bottom: 4px;
+  }
+
+  .kindergarten-card img {
+    max-height: 52vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-img {
+    animation: none;
+  }
+
+  .kindergarten-card {
+    transition: none;
+  }
+}
