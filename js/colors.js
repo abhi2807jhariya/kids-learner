@@ -726,15 +726,22 @@ function getRotatedScrollTarget(event) {
     colorModal?.classList.contains("show") &&
     target.closest("#colorModal")
   ) {
-    return getScrollableElement(
-      colorDetail,
-      colorModal
-    );
+    return null;
   }
 
   return getScrollableElement(
     colorsHero,
     colorsApp
+  );
+}
+
+function isLockedRotatedColorModal(event) {
+  return (
+    document.body.classList.contains(
+      "mobile-portrait-rotate"
+    ) &&
+    colorModal?.classList.contains("show") &&
+    event.target.closest("#colorModal")
   );
 }
 
@@ -764,6 +771,11 @@ function enableRotatedTouchScroll() {
   document.addEventListener(
     "touchmove",
     (event) => {
+      if (isLockedRotatedColorModal(event)) {
+        event.preventDefault();
+        return;
+      }
+
       const scrollTarget =
         getRotatedScrollTarget(event);
 
@@ -800,6 +812,11 @@ function enableRotatedTouchScroll() {
   document.addEventListener(
     "wheel",
     (event) => {
+      if (isLockedRotatedColorModal(event)) {
+        event.preventDefault();
+        return;
+      }
+
       const scrollTarget =
         getRotatedScrollTarget(event);
 

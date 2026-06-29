@@ -3983,3 +3983,420 @@ body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel .big-sp
   width: 45px;
   height: 45px;
 }
+
+/* Equal examples and quiz panels */
+@media (min-width: 901px) {
+  .examples-section,
+  .quiz-section {
+    flex: 1 1 0 !important;
+  }
+}
+
+body.mobile-portrait-rotate .learning-panel,
+body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+
+body.mobile-portrait-rotate .examples-section,
+body.mobile-portrait-rotate .quiz-section {
+  min-width: 0;
+  width: 100%;
+}
+
+/* Breathing room around the color popup card */
+.color-detail {
+  margin-block: 14px;
+}
+
+body.mobile-portrait-rotate .color-modal {
+  padding-block: 9px;
+  overflow: hidden !important;
+  touch-action: manipulation;
+}
+
+body.mobile-portrait-rotate .color-detail {
+  height: calc(var(--visible-width) - 28px) !important;
+  max-height: calc(var(--visible-width) - 28px) !important;
+  margin-block: 0;
+  overflow: hidden !important;
+  touch-action: manipulation;
+}
+
+body.mobile-portrait-rotate.modal-open,
+body.mobile-portrait-rotate.modal-open .colors-app,
+body.mobile-portrait-rotate.modal-open .colors-hero {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Final rotated mobile popup layout */
+body.mobile-portrait-rotate .color-modal.show {
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 9px 34px !important;
+  overflow: hidden !important;
+}
+
+body.mobile-portrait-rotate .color-detail {
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(96%, 760px) !important;
+  height: calc(var(--visible-width) - 28px) !important;
+  max-height: calc(var(--visible-width) - 28px) !important;
+  padding: 7px 9px 9px !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .modal-content-grid {
+  display: contents !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .selected-color-panel {
+  position: relative !important;
+  order: 1 !important;
+  flex: 0 1 auto !important;
+  display: grid !important;
+  grid-template-columns: 30px auto 48px auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: fit-content !important;
+  max-width: calc(100% - 86px) !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 4px 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .modal-top-row {
+  position: absolute !important;
+  top: 7px !important;
+  right: 9px !important;
+  z-index: 8 !important;
+  order: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 72px !important;
+  height: 48px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .modal-progress {
+  position: static !important;
+  padding: 4px 7px !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+  white-space: nowrap !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .modal-heading-area,
+body.mobile-portrait-rotate .color-mobile-flex-row .modal-small-label,
+body.mobile-portrait-rotate .color-mobile-flex-row .detail-title {
+  display: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .sound-btn {
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 13px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .say-color-message {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-wrap,
+body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-image {
+  width: 45px !important;
+  height: 45px !important;
+  margin: 0 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .big-splash-fallback {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .detail-color-name {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .learning-panel {
+  order: 3 !important;
+  flex: 1 1 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  height: calc(100% - 56px) !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .examples-section,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-section {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 6px !important;
+  border-width: 2px !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .section-heading,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-heading {
+  margin: 0 0 4px !important;
+  font-size: 15px !important;
+  line-height: 1.05 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label-top {
+  margin: 0 0 2px !important;
+  font-size: 8px !important;
+  line-height: 1 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .section-instruction {
+  display: block !important;
+  order: 3 !important;
+  margin: 4px 0 0 !important;
+  font-size: 8px !important;
+  line-height: 1 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .examples-grid,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 5px !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .examples-grid {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  padding-top: 8px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-options {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  padding-top: 8px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-card,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  padding: 3px !important;
+  border-width: 2px !important;
+  border-radius: 10px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-card {
+  flex-direction: row !important;
+  gap: 5px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+  flex-direction: row !important;
+  gap: 7px !important;
+  justify-content: flex-start !important;
+  padding: 4px 6px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-image {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+  flex: 0 0 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-name,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+  min-width: 0 !important;
+  margin-top: 2px !important;
+  padding: 1px 4px !important;
+  font-size: 8px !important;
+  line-height: 1 !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-name {
+  margin-top: 0 !important;
+  text-align: left !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+  margin-top: 0 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Fit quiz option content cleanly in the narrow rotated cards */
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  padding: 4px 7px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+}
+
+/* Center the quiz content group while keeping image/text starts aligned */
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option {
+  display: grid !important;
+  grid-template-columns: 30px minmax(54px, max-content) !important;
+  justify-content: center !important;
+  align-items: center !important;
+  column-gap: 7px !important;
+  box-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.85) !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-option-image {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  flex: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
+  grid-column: 2 !important;
+  justify-self: start !important;
+  min-width: 54px !important;
+  width: 54px !important;
+  text-align: left !important;
+}
+
+/* Match example cards to the quiz row layout */
+body.mobile-portrait-rotate .color-mobile-flex-row .example-card {
+  display: grid !important;
+  grid-template-columns: 34px minmax(72px, max-content) !important;
+  justify-content: center !important;
+  align-items: center !important;
+  column-gap: 8px !important;
+  box-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.85) !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-image {
+  grid-column: 1 !important;
+  justify-self: center !important;
+  flex: none !important;
+  width: 34px !important;
+  height: 34px !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .example-name {
+  grid-column: 2 !important;
+  justify-self: start !important;
+  min-width: 72px !important;
+  width: 72px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 11px !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .object-feedback,
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
+  min-height: 16px !important;
+  margin-top: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 8px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
