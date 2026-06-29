@@ -516,7 +516,7 @@ body.modal-open {
   border-radius: 22px;
   background: #fff;
   color: var(--dark);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 900;
   text-align: center;
   box-shadow:
@@ -4316,7 +4316,7 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-label {
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  font-size: 15px !important;
+  font-size: 11px !important;
   line-height: 1.05 !important;
   text-align: left !important;
   white-space: normal !important;
@@ -4448,4 +4448,16 @@ body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .object-feedback {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.mobile-portrait-rotate .color-mobile-flex-row .quiz-feedback {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
