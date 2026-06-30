@@ -908,12 +908,20 @@ body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-shell {
   margin-top: 2px;
 }
 body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-infographic {
-  max-height: min(42vh, 200px);
+  width: min(100%, 220px);
+  height: auto;
+  max-height: min(34vh, 170px);
+}
+
+body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .detail-infographic.is-entering {
+  width: min(100%, 220px);
+  height: auto;
+  max-height: min(34vh, 170px);
 }
 body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .compact-controls {
   gap: 6px;
-  margin-top: -8px;
-  transform: translateY(-8px);
+  margin-top: 7px;
+  transform: translateY(7px);
 }
 body:is(.mobile-portrait-rotate, .mobile-landscape-layout) .objects-panel-head {
   padding-bottom: 5px;

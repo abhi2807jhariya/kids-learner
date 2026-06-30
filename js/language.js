@@ -35,6 +35,10 @@ const languages = [
 
         const lionBox = document.getElementById("lionBox");
         const lionImg = document.getElementById("lionImg");
+        const lionImages = {
+            cute: "assets/images/language-images/cute-line.png",
+            happy: "assets/images/language-images/happy-line.png",
+        };
 
         const selectedAnimalBox = document.getElementById("selectedAnimalBox");
         const selectedAnimalImg = document.getElementById("selectedAnimalImg");
@@ -135,6 +139,11 @@ const languages = [
             playSelectionAnimations(card);
         }
 
+        function setLionMood(isHappy) {
+            lionImg.src = isHappy ? lionImages.happy : lionImages.cute;
+            lionImg.alt = isHappy ? "Happy Lion" : "Cute Lion";
+        }
+
         function playSelectionAnimations(card) {
             lionBox.classList.remove("show");
             selectedAnimalBox.classList.remove("show");
@@ -142,7 +151,7 @@ const languages = [
             void lionBox.offsetWidth;
             void selectedAnimalBox.offsetWidth;
 
-            lionImg.src = "assets/images/language-images/happy-line.png";
+            setLionMood(true);
 
             lionBox.classList.add("show");
             selectedAnimalBox.classList.add("show");
@@ -248,7 +257,7 @@ const languages = [
             lionBox.classList.remove("show");
             selectedAnimalBox.classList.remove("show");
 
-            lionImg.src = "assets/images/language-images/cute-line.png";
+            setLionMood(false);
         }
 
         window.addEventListener("resize", updateMobileLayout);
@@ -256,4 +265,5 @@ const languages = [
         window.visualViewport?.addEventListener("resize", updateMobileLayout);
 
         updateMobileLayout();
+        setLionMood(false);
         renderCards();
